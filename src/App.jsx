@@ -1,10 +1,20 @@
 import './index.css'
+import DrinkList from './components/DrinkList'
+
+
+
 
 function App() {
-
   return (
-    <div>TEST</div>
+    <div>
+      <DrinkList /> 
+    </div>
   )
 }
+
+
+
+
+
 
 export default App
