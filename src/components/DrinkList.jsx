@@ -1,4 +1,7 @@
 import Drink from "./Drink";
+import { useEffect, useState } from "react";
+
+const shuffle = arr => [...arr].sort(() => Math.random() - 0.5);
 
 const drinkData = [
   {
@@ -75,20 +78,43 @@ const drinkData = [
   },
 ];
 
-function DrinkList() {
-  const drinks = drinkData;
+function DrinkList({ setWin }) {
+  const [clickedPhoto, setClickedPhoto] = useState(null);
+  const [score, setScore] = useState(0);
+  console.log(clickedPhoto);
+  const drinks = shuffle(drinkData);
+
+  useEffect(() => {
+    if (clickedPhoto !== null) {
+      setScore(score => score + 1);
+    }
+
+    console.log("Component mounted or propValue changed");
+
+    // Optional: Cleanup function (similar to componentWillUnmount in classes)
+    return () => {
+      console.log("Cleanup code here");
+    };
+  }, [clickedPhoto]);
+
   return (
     <div>
+      <p>{score}</p>
       <ul className="grid grid-cols-3 gap-4">
-        {drinks.map((drink) => (
+        {drinks.map(drink => (
           <Drink
             drinkPhotoName={drink.photoDir}
             drinkName={drink.name}
+            currentScore={score}
+            drinkId={drink.id}
+            currentDrink={clickedPhoto}
+            onClickedPhoto={setClickedPhoto}
+            onClickScore={setScore}
+            onWin={setWin}
             key={drink.id}
           />
         ))}
       </ul>
-      <button className="text-xl text-yellow-500 font-semibold text-center "></button>
     </div>
   );
 }
