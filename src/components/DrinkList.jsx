@@ -78,9 +78,7 @@ const drinkData = [
   },
 ];
 
-function DrinkList({ setWin }) {
-  const [clickedPhoto, setClickedPhoto] = useState(null);
-  const [score, setScore] = useState(0);
+function DrinkList({ setWin, clickedPhoto, setClickedPhoto, score, setScore }) {
   console.log(clickedPhoto);
   const drinks = shuffle(drinkData);
 
@@ -95,12 +93,12 @@ function DrinkList({ setWin }) {
     return () => {
       console.log("Cleanup code here");
     };
-  }, [clickedPhoto]);
+  }, [clickedPhoto, setScore]);
 
   return (
-    <div>
+    <>
       <p>{score}</p>
-      <ul className="grid grid-cols-3 gap-4">
+      <ul className="grid auto-rows-min grid-cols-3 gap-4 p-5 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7">
         {drinks.map(drink => (
           <Drink
             drinkPhotoName={drink.photoDir}
@@ -115,7 +113,7 @@ function DrinkList({ setWin }) {
           />
         ))}
       </ul>
-    </div>
+    </>
   );
 }
 
