@@ -6,7 +6,7 @@ function App() {
   const [win, setWin] = useState(false);
   const [clickedPhoto, setClickedPhoto] = useState(null);
   const [score, setScore] = useState(0);
-  const highScore = useRef();
+  // const highScore = useRef();
 
   return (
     <div>

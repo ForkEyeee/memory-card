@@ -21,8 +21,9 @@ function Drink({
       <img
         src={drinkPhotoName}
         alt={drinkName}
-        className="h-48 w-48"
+        className="border border-solid border-black p-16"
         onClick={determineWin}
+        // loading="lazy"
       />
     </li>
   );
