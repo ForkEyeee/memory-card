@@ -1,31 +1,36 @@
-import DrinkList from "./components/DrinkList";
+import DrinkList from "./components/CardList";
 import Header from "./components/header";
 import GameOverModal from "./components/GameOverModal";
-import { useState } from "react";
-function App() {
-  const [win, setWin] = useState(false);
-  const [clickedPhoto, setClickedPhoto] = useState(null);
-  const [score, setScore] = useState(0);
-  // const highScore = useRef();
+import { useState, useRef } from "react";
 
+function App() {
+  const [gameOver, setGameOver] = useState(false);
+  const [clickedCards, setClickedCards] = useState([]);
+  const [score, setScore] = useState(0);
+  const highScoreRef = useRef(0);
+
+  if (highScoreRef.current < score) {
+    highScoreRef.current = score;
+  }
   return (
     <div>
-      {win && (
+      {gameOver && (
         <GameOverModal
-          setClickedPhoto={setClickedPhoto}
+          onCardClick={setClickedCards}
+          setGameOver={setGameOver}
           setScore={setScore}
-          setWin={setWin}
-          win={win}
+          gameOver={gameOver}
         />
       )}
 
       <Header />
       <DrinkList
-        setWin={setWin}
-        clickedPhoto={clickedPhoto}
-        setClickedPhoto={setClickedPhoto}
+        onCardClick={setClickedCards}
+        setGameOver={setGameOver}
+        clickedCards={clickedCards}
         score={score}
         setScore={setScore}
+        //pass ref to drinklist
       />
     </div>
   );
