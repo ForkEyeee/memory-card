@@ -1,10 +1,9 @@
 import PropTypes from "prop-types";
 
-function Score({ children, position, color }) {
-  const scorePosition = position === "right" ? "right-4" : "left-4";
+function Score({ children, twClasses }) {
   return (
     <div
-      className={`fixed ${scorePosition} top-4 rounded-lg bg-blue-100 p-2 text-xl font-semibold ${color} shadow-md`}
+      className={`rounded-lg bg-blue-100 p-2 text-xl font-semibold ${twClasses} shadow-md`}
     >
       {children}
     </div>
@@ -13,8 +12,7 @@ function Score({ children, position, color }) {
 
 Score.propTypes = {
   children: PropTypes.array.isRequired,
-  position: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired,
+  twClasses: PropTypes.string,
 };
 
 export default Score;

@@ -10,9 +10,8 @@ function Footer() {
             className="flex items-center gap-4 hover:underline"
           >
             <span>ForkEyeee</span>
-
             <img
-              src="../src/assets/icons/github.png"
+              src="/assets/icons/github.png"
               alt="github-image"
               className="h-8 w-8"
             />
