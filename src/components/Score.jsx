@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 function Score({ children, twClasses }) {
   return (
     <div
-      className={`rounded-lg bg-blue-100 p-2 text-xl font-semibold ${twClasses} shadow-md`}
+      className={`rounded-lg bg-blue-100 p-2 text-xl shadow-md ${twClasses}`}
     >
       {children}
     </div>

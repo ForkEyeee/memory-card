@@ -27,7 +27,7 @@ function CardList({
 
   return (
     <>
-      <ul className="grid auto-rows-min	grid-cols-8 gap-y-20  md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7">
+      <ul className="grid	grid-cols-4 grid-rows-4 gap-y-20 md:grid-cols-4 ">
         {cards.map(card => (
           <li key={card.id} className="flex justify-center">
             <Card
