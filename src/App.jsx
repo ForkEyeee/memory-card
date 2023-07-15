@@ -17,6 +17,7 @@ function App() {
 
   return (
     <div className="flex h-screen flex-col justify-between">
+      <Header />
       <GameOverModal
         onCardClick={setClickedCards}
         setLose={setLose}
@@ -25,7 +26,7 @@ function App() {
         win={win}
         setWin={setWin}
       />
-      <Header />
+
       <CardList
         onCardClick={setClickedCards}
         win={win}

@@ -1,25 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.blurred-img {
-  background-repeat: no-repeat;
-  background-size: cover;
-  filter: blur(10px);
-  transition: filter 0.3s;
-  height: 200px;
-}
-
-.blurred-img img {
-  opacity: 0;
-  transition: opacity 0.3s;
-  height: 200px;
-}
-
-.image-loaded {
-  filter: blur(0px);
-}
-
-.image-loaded img {
-  opacity: 1;
-}
