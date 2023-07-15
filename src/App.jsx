@@ -9,19 +9,17 @@ function App() {
   const [score, setScore] = useState(0);
   const highScoreRef = useRef(0);
 
-  if (highScoreRef.current < score) {
+  if (highScoreRef.current < score && gameOver) {
     highScoreRef.current = score;
   }
   return (
     <div>
-      {gameOver && (
-        <GameOverModal
-          onCardClick={setClickedCards}
-          setGameOver={setGameOver}
-          setScore={setScore}
-          gameOver={gameOver}
-        />
-      )}
+      <GameOverModal
+        onCardClick={setClickedCards}
+        setGameOver={setGameOver}
+        setScore={setScore}
+        gameOver={gameOver}
+      />
 
       <Header />
       <DrinkList
@@ -30,6 +28,7 @@ function App() {
         clickedCards={clickedCards}
         score={score}
         setScore={setScore}
+        highscore={highScoreRef}
         //pass ref to drinklist
       />
     </div>

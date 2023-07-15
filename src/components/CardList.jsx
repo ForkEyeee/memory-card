@@ -91,7 +91,14 @@ const cardData = [
   },
 ];
 
-function CardList({ onCardClick, setGameOver, clickedCards, score, setScore }) {
+function CardList({
+  onCardClick,
+  setGameOver,
+  clickedCards,
+  score,
+  setScore,
+  highscore,
+}) {
   const cards = shuffle(cardData);
   console.log("rendering cardlist");
   // useEffect(() => {
@@ -109,8 +116,8 @@ function CardList({ onCardClick, setGameOver, clickedCards, score, setScore }) {
   // console.log(cards);
   return (
     <>
-      <p>HighScore:</p>
-      <p>{score}</p>
+      <p>HighScore: {highscore.current}</p>
+      <p>CurrentScore:{score}</p>
 
       <ul className="grid auto-rows-min	 grid-cols-3 gap-20 gap-y-12 p-5 pl-20 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 ">
         {cards.map(card => (

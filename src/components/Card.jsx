@@ -11,10 +11,7 @@ function Card({
   function determineWin() {
     if (clickedCards.includes(card.id)) {
       setGameOver(true);
-      onCardClick(null);
-      setScore(0);
-      setGameOver(false);
-      onCardClick([]);
+
       return;
     }
     onCardClick(current => [...current, card.id]);
