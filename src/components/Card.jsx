@@ -1,25 +1,15 @@
 import PropTypes from "prop-types";
 
-function Card({
-  card,
-  clickedCards,
-  onCardClick,
-  setScore,
-  setGameOver,
-  score,
-}) {
+function Card({ card, clickedCards, onCardClick, setScore, setGameOver }) {
   function determineWin() {
     if (clickedCards.includes(card.id)) {
       setGameOver(true);
-
       return;
     }
     onCardClick(current => [...current, card.id]);
     setScore(score => score + 1);
-    // card.isClicked = true;
-    // console.log(card);
-    console.log("clicked");
   }
+
   return (
     <div>
       <img
@@ -34,11 +24,10 @@ function Card({
 
 Card.propTypes = {
   card: PropTypes.object.isRequired,
-  clickedCard: PropTypes.number,
+  clickedCards: PropTypes.array,
   onCardClick: PropTypes.func.isRequired,
   setScore: PropTypes.func.isRequired,
   setGameOver: PropTypes.func.isRequired,
-  score: PropTypes.number.isRequired,
 };
 
 export default Card;

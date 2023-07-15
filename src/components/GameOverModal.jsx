@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function GameOverModal({ onCardClick, setGameOver, setScore, gameOver }) {
   return (
     gameOver && (
@@ -44,5 +46,12 @@ function GameOverModal({ onCardClick, setGameOver, setScore, gameOver }) {
     )
   );
 }
+
+GameOverModal.propTypes = {
+  onCardClick: PropTypes.func.isRequired,
+  setGameOver: PropTypes.func.isRequired,
+  setScore: PropTypes.func.isRequired,
+  gameOver: PropTypes.bool.isRequired,
+};
 
 export default GameOverModal;
