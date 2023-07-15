@@ -8,72 +8,72 @@ const cardData = [
   {
     id: 1,
     name: "Angry Face",
-    photoDir: "../src/assets/images/angry-face.png",
+    photoDir: "../src/assets/cards/angry-face.png",
   },
   {
     id: 2,
     name: "Astonished Face",
-    photoDir: "../src/assets/images/astonished-face.png",
+    photoDir: "../src/assets/cards/astonished-face.png",
   },
   {
     id: 3,
     name: "Beaming Face With Smiling Eyes",
-    photoDir: "../src/assets/images/beaming-face-with-smiling-eyes.png",
+    photoDir: "../src/assets/cards/beaming-face-with-smiling-eyes.png",
   },
   {
     id: 4,
     name: "Face With Symbols On Mouth",
-    photoDir: "../src/assets/images/face-with-symbols-on-mouth.png",
+    photoDir: "../src/assets/cards/face-with-symbols-on-mouth.png",
   },
   {
     id: 5,
     name: "Face With Tears Of Joy",
-    photoDir: "../src/assets/images/face-with-tears-of-joy.png",
+    photoDir: "../src/assets/cards/face-with-tears-of-joy.png",
   },
   {
     id: 6,
     name: "Ghost",
-    photoDir: "../src/assets/images/ghost.png",
+    photoDir: "../src/assets/cards/ghost.png",
   },
   {
     id: 7,
     name: "Goblin",
-    photoDir: "../src/assets/images/goblin.png",
+    photoDir: "../src/assets/cards/goblin.png",
   },
   {
     id: 8,
     name: "Loudly Crying Face",
-    photoDir: "../src/assets/images/loudly-crying-face.png",
+    photoDir: "../src/assets/cards/loudly-crying-face.png",
   },
   {
     id: 9,
     name: "Zany Face",
-    photoDir: "../src/assets/images/zany-face.png",
+    photoDir: "../src/assets/cards/zany-face.png",
   },
   {
     id: 10,
     name: "Upside-Down Face",
-    photoDir: "../src/assets/images/upside-down-face.png",
+    photoDir: "../src/assets/cards/upside-down-face.png",
   },
   {
     id: 11,
     name: "Squinting Face With Tongue",
-    photoDir: "../src/assets/images/squinting-face-with-tongue.png",
+    photoDir: "../src/assets/cards/squinting-face-with-tongue.png",
   },
   {
     id: 12,
     name: "Pile of Poo",
-    photoDir: "../src/assets/images/pile-of-poo.png",
+    photoDir: "../src/assets/cards/pile-of-poo.png",
   },
   {
     id: 13,
     name: "Drooling Face",
-    photoDir: "../src/assets/images/drooling-face.png",
+    photoDir: "../src/assets/cards/drooling-face.png",
   },
   {
     id: 14,
     name: "Nauseated Face",
-    photoDir: "../src/assets/images/nauseated-face.png",
+    photoDir: "../src/assets/cards/nauseated-face.png",
   },
 ];
 

@@ -1,6 +1,7 @@
 import DrinkList from "./components/CardList";
-import Header from "./components/header";
+import Header from "./components/Header";
 import GameOverModal from "./components/GameOverModal";
+import Footer from "./components/Footer";
 import { useState, useRef } from "react";
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
     : highScoreRef.current;
 
   return (
-    <div>
+    <div className="flex h-screen flex-col justify-between">
       <GameOverModal
         onCardClick={setClickedCards}
         setGameOver={setGameOver}
@@ -30,6 +31,7 @@ function App() {
         setScore={setScore}
         highscore={highScoreRef}
       />
+      <Footer />
     </div>
   );
 }
