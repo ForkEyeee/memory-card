@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 
-function GameOverModal({ onCardClick, setGameOver, setScore, gameOver }) {
+function GameOverModal({ onCardClick, setLose, setScore, lose, win, setWin }) {
   return (
-    gameOver && (
+    (win || lose) && (
       <div className="fixed inset-0 z-10 overflow-y-auto">
         <div className="flex min-h-screen items-end justify-center px-4 pb-20 pt-4 text-center sm:block sm:p-0">
           <div className="fixed inset-0 transition-opacity">
@@ -18,9 +18,13 @@ function GameOverModal({ onCardClick, setGameOver, setScore, gameOver }) {
                     Game Over
                   </h3>
                   <div className="mt-2">
-                    <p className="text-sm text-gray-500">
-                      Better luck next time!
-                    </p>
+                    {win ? (
+                      <p className="text-sm text-gray-500">You Win!</p>
+                    ) : (
+                      <p className="text-sm text-gray-500">
+                        Better luck next time!
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>
@@ -30,7 +34,8 @@ function GameOverModal({ onCardClick, setGameOver, setScore, gameOver }) {
                 onClick={() => {
                   setScore(0);
                   onCardClick([]);
-                  setGameOver(false);
+                  setLose(false);
+                  setWin(false);
                 }}
                 type="button"
                 className="inline-flex w-full justify-center rounded-md border border-transparent
@@ -49,9 +54,11 @@ function GameOverModal({ onCardClick, setGameOver, setScore, gameOver }) {
 
 GameOverModal.propTypes = {
   onCardClick: PropTypes.func.isRequired,
-  setGameOver: PropTypes.func.isRequired,
+  setLose: PropTypes.func.isRequired,
   setScore: PropTypes.func.isRequired,
-  gameOver: PropTypes.bool.isRequired,
+  lose: PropTypes.bool.isRequired,
+  win: PropTypes.bool.isRequired,
+  setWin: PropTypes.func.isRequired,
 };
 
 export default GameOverModal;
