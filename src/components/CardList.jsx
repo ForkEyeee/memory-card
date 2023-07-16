@@ -2,11 +2,11 @@ import Card from "./Card";
 import PropTypes from "prop-types";
 import cardData from "./CardData";
 
-function CardList({ determineWin }) {
-  function shuffleCards(cardData) {
-    return [...cardData].sort(() => Math.random() - 0.5);
-  }
+function shuffleCards(cardData) {
+  return [...cardData].sort(() => Math.random() - 0.5);
+}
 
+function CardList({ determineWin }) {
   const cards = shuffleCards(cardData);
 
   return (

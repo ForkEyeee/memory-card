@@ -31,13 +31,9 @@ function App() {
         win: true,
       }));
     }
-    return () => {};
-  }, [clickedCards]);
-
-  useEffect(() => {
     setHighScore(highScore < score && gameResult.win ? score : highScore);
     return () => {};
-  }, [highScore, score, gameResult.win]);
+  }, [clickedCards, highScore, score, gameResult.win]);
 
   function determineWin(cardId) {
     if (clickedCards.includes(cardId)) {
