@@ -1,20 +1,9 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom/client";
 import cardData from "./components/CardData";
 import { useState, useEffect } from "react";
-import { ChakraProvider } from "@chakra-ui/react";
 import CardList from "./components/CardList";
 import Header from "./components/Header";
 import GameOverModal from "./components/GameOverModal";
 import Footer from "./components/Footer";
-
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <ChakraProvider>
-      <App />
-    </ChakraProvider>
-  </React.StrictMode>
-);
 
 function App() {
   const [gameResult, setGameResult] = useState({
