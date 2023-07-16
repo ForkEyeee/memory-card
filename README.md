@@ -1,5 +1,3 @@
-Sure, here's the revised formatting for your README file that can be used on your GitHub project. It includes Markdown syntax for better readability and structure:
-
 ---
 
 # Memory-Card Game
