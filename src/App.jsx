@@ -11,6 +11,13 @@ function App() {
   const [score, setScore] = useState(0);
   const highScoreRef = useRef(0);
 
+  function resetGameState() {
+    setScore(0);
+    setClickedCards([]);
+    setLose(false);
+    setWin(false);
+  }
+
   highScoreRef.current < score && (win || lose)
     ? (highScoreRef.current = score)
     : highScoreRef.current;
@@ -18,15 +25,7 @@ function App() {
   return (
     <div className="flex h-screen flex-col justify-between bg-slate-100">
       <Header score={score} highScore={highScoreRef} />
-      <GameOverModal
-        onCardClick={setClickedCards}
-        setLose={setLose}
-        setScore={setScore}
-        lose={lose}
-        win={win}
-        setWin={setWin}
-      />
-
+      {(win || lose) && <GameOverModal resetGame={resetGameState} win={win} />}
       <CardList
         onCardClick={setClickedCards}
         win={win}

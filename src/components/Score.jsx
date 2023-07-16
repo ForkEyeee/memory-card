@@ -15,4 +15,4 @@ Score.propTypes = {
   twClasses: PropTypes.string,
 };
 
-export default Score
+export default Score;
