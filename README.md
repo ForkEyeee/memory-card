@@ -1,45 +1,54 @@
+---
+
 # Memory-Card Game
 
-This is an interactive online game where the objective is to select a unique card during each round. The game concludes when a previously selected card is clicked or when all the cards have been chosen.
+Memory-Card is an interactive online game. The objective of the game is to select a unique card during each round. The game concludes when a previously selected card is clicked or when all the cards have been chosen.
 
 ## Setup and Installation
 
-Follow these instructions to set up this project on your local machine.
+To set up this project on your local machine, follow these instructions:
 
 ### Prerequisites
 
-Ensure you have Node.js and npm installed on your machine.
+You should have [Node.js](https://nodejs.org/en/) and npm (comes with Node.js) installed on your machine.
 
-### Steps
+### Installation Steps
 
-1. Clone the repository:
+1. **Clone the repository:**
 
-git clone <https://github.com/ForkEyeee/memory-card>
+```bash
+git clone https://github.com/ForkEyeee/memory-card
+```
 
-2. Navigate into the project folder:
+2. **Navigate into the project folder:**
 
+```bash
 cd memory-card
+```
 
-3. Install the dependencies:
+3. **Install the dependencies:**
 
+```bash
 npm install
+```
 
-4. Start the development server:
+4. **Start the development server:**
 
+```bash
 npm run dev
+```
 
-
-Now you can open your browser and navigate to `http://localhost:5000` to see the application running.
+You can now open your browser and navigate to `http://localhost:5000` to see the application running.
 
 ## Building for Production
 
-To create an optimized production build of the app, use the command:
+To create an optimized production build of the app, use the following command:
 
-
+```bash
 npm run build
+```
 
-
-This will generate a `dist` folder with all the files bundled and optimized for production.
+This command will generate a `dist` folder with all the files bundled and optimized for production.
 
 ## Technology Stack
 
