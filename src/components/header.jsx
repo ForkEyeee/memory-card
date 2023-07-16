@@ -1,32 +1,34 @@
 import Score from "./Score";
 import PropTypes from "prop-types";
-import { Text } from "@chakra-ui/react";
+import { Text, Box, useBreakpointValue } from "@chakra-ui/react";
 import { HelpModal } from "./HelpModal";
 import { Flex } from "@chakra-ui/react";
 
 function Header({ score, highScore }) {
+  const fontSize = useBreakpointValue({ base: "md", md: "lg", lg: "3xl" });
+
   return (
     <>
-      <Flex justify="space-between" className="bg-blue-500">
-        <Score twClasses={"text-green-600 bg-gray-200 font-bold"}>
-          Score: {score}
-        </Score>
-        <Text
-          fontSize={{ base: "md", md: "lg", lg: "3xl" }}
-          lineHeight="tall"
-          textAlign={{ base: "center", md: "left" }}
-          fontWeight={{ base: "normal", md: "bold" }}
-          textTransform={{ base: "uppercase", md: "none" }}
-          whitespace="normal"
-          wordBreak={{ base: "break-word", md: "normal" }}
-          color="whiteAlpha.900"
-        >
-          Memory Card Game
-        </Text>
-        <Score twClasses={"text-red-600 bg-gray-200 font-bold"}>
-          Highscore: {highScore}
-        </Score>
-      </Flex>
+      <Box
+        as="header"
+        bg="blue.500"
+        px={[2, 4, 6]}
+        py={4}
+        shadow="md"
+        color="white"
+      >
+        <Flex justify="space-between" align="center">
+          <Score twClasses={"text-green-600 bg-gray-200 font-bold"}>
+            Score: {score}
+          </Score>
+          <Text fontSize={fontSize} fontWeight="bold" textTransform="uppercase">
+            Memory Card Game
+          </Text>
+          <Score twClasses={"text-red-600 bg-gray-200 font-bold"}>
+            Highscore: {highScore}
+          </Score>
+        </Flex>
+      </Box>
       <HelpModal />
     </>
   );

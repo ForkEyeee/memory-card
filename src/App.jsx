@@ -20,7 +20,13 @@ function App() {
         win: true,
       }));
     }
-    setHighScore(highScore < score && gameResult.win ? score : highScore);
+    setHighScore(
+      gameResult.win !== undefined
+        ? highScore < score
+          ? score
+          : highScore
+        : highScore
+    );
     return () => {};
   }, [clickedCards, highScore, score, gameResult.win]);
 
