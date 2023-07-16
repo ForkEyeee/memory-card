@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function GameOverModal({ resetGame, win }) {
+function GameOverModal({ resetGame, gameResult }) {
   return (
     <div className="fixed inset-0 z-10 overflow-y-auto">
       <div className="flex min-h-screen items-end justify-center px-4 pb-20 pt-4 text-center sm:block sm:p-0">
@@ -17,7 +17,7 @@ function GameOverModal({ resetGame, win }) {
                   Game Over
                 </h3>
                 <div className="mt-2">
-                  {win ? (
+                  {gameResult.win ? (
                     <p className="text-sm text-gray-500">You Win!</p>
                   ) : (
                     <p className="text-sm text-gray-500">
@@ -46,8 +46,8 @@ function GameOverModal({ resetGame, win }) {
 }
 
 GameOverModal.propTypes = {
-  resetGame: PropTypes.func.isRequireds,
-  win: PropTypes.bool.isRequired,
+  resetGame: PropTypes.func.isRequired,
+  gameResult: PropTypes.object.isRequired,
 };
 
 export default GameOverModal;

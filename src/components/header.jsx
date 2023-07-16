@@ -7,9 +7,6 @@ import { Flex } from "@chakra-ui/react";
 function Header({ score, highScore }) {
   return (
     <>
-      {/* <header className="flex w-full cursor-default justify-between bg-blue-500 px-4 py-4 text-center text-2xl font-bold text-white shadow-md  md:text-3xl lg:text-4xl">
-      </header> */}
-
       <Flex justify="space-between" className="bg-blue-500">
         <Score twClasses={"text-green-600 bg-gray-200 font-bold"}>
           Score: {score}
@@ -27,7 +24,7 @@ function Header({ score, highScore }) {
           Memory Card Game
         </Text>
         <Score twClasses={"text-red-600 bg-gray-200 font-bold"}>
-          Highscore: {highScore.current}
+          Highscore: {highScore}
         </Score>
       </Flex>
       <HelpModal />
@@ -37,7 +34,7 @@ function Header({ score, highScore }) {
 
 Header.propTypes = {
   score: PropTypes.number.isRequired,
-  highScore: PropTypes.object.isRequired,
+  highScore: PropTypes.number.isRequired,
 };
 
 export default Header;
