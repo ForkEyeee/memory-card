@@ -5,19 +5,19 @@ import Footer from "./components/Footer";
 import { useState, useRef } from "react";
 
 function App() {
-  const [lose, setLose] = useState(false);
   const [win, setWin] = useState(false);
+  const [lose, setLose] = useState(false);
   const [clickedCards, setClickedCards] = useState([]);
   const [score, setScore] = useState(0);
   const highScoreRef = useRef(0);
 
-  highScoreRef.current < score && (lose || win)
+  highScoreRef.current < score && (win || lose)
     ? (highScoreRef.current = score)
     : highScoreRef.current;
 
   return (
-    <div className="flex h-screen flex-col justify-between">
-      <Header />
+    <div className="flex h-screen flex-col justify-between bg-slate-100">
+      <Header score={score} highScore={highScoreRef} />
       <GameOverModal
         onCardClick={setClickedCards}
         setLose={setLose}
@@ -33,9 +33,7 @@ function App() {
         setWin={setWin}
         setLose={setLose}
         clickedCards={clickedCards}
-        score={score}
         setScore={setScore}
-        highscore={highScoreRef}
       />
       <Footer />
     </div>
