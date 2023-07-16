@@ -8,6 +8,7 @@ import {
   ModalCloseButton,
   Button,
   useDisclosure,
+  Box,
 } from "@chakra-ui/react";
 import { QuestionIcon } from "@chakra-ui/icons";
 
@@ -15,11 +16,22 @@ export function HelpModal() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <QuestionIcon
-        boxSize={50}
+      <Box
+        as={QuestionIcon}
+        boxSize={{ base: "16", sm: "12" }}
+        color="red.500"
         onClick={onOpen}
-        color={"red.500"}
-        className="fa-regular fa-circle-question cursor-pointer pl-4 pt-4 hover:text-gray-300"
+        _hover={{
+          color: "red.700",
+          transition: "color 0.2s",
+        }}
+        borderRadius="full"
+        bg="white"
+        boxShadow="2xl"
+        className="cursor-pointer"
+        m={{ base: "1", sm: "4" }}
+        mr={{ base: "3", sm: "7" }} //for help icon on mobile
+        mt={{ base: "3", sm: "7" }}
       />
 
       <Modal isOpen={isOpen} onClose={onClose}>

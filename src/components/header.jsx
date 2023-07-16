@@ -1,12 +1,11 @@
 import Score from "./Score";
 import PropTypes from "prop-types";
 import { Text, Box, useBreakpointValue } from "@chakra-ui/react";
-import { HelpModal } from "./HelpModal";
 import { Flex } from "@chakra-ui/react";
 
 function Header({ score, highScore }) {
   const fontSize = useBreakpointValue({ base: "md", md: "lg", lg: "3xl" });
-
+  //dynamic fontsize
   return (
     <>
       <Box
@@ -16,6 +15,7 @@ function Header({ score, highScore }) {
         py={4}
         shadow="md"
         color="white"
+        className="cursor-default"
       >
         <Flex justify="space-between" align="center">
           <Score twClasses={"text-green-600 bg-gray-200 font-bold"}>
@@ -29,7 +29,6 @@ function Header({ score, highScore }) {
           </Score>
         </Flex>
       </Box>
-      <HelpModal />
     </>
   );
 }

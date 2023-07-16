@@ -2,6 +2,7 @@ import cardData from "./components/CardData";
 import { useState, useEffect } from "react";
 import CardList from "./components/CardList";
 import Header from "./components/Header";
+import { HelpModal } from "./components/HelpModal";
 import GameOverModal from "./components/GameOverModal";
 import Footer from "./components/Footer";
 
@@ -52,12 +53,17 @@ function App() {
   }
 
   return (
-    <div className="flex h-screen flex-col justify-between bg-slate-100">
+    <div className="flex min-h-screen flex-col">
       <Header score={score} highScore={highScore} />
-      {gameResult.win !== undefined && (
-        <GameOverModal resetGame={resetGameState} gameResult={gameResult} />
-      )}
-      <CardList onCardClick={setClickedCards} determineWin={determineWin} />
+      <div className="flex-grow bg-gradient-to-r from-blue-500 to-green-500">
+        {gameResult.win !== undefined && (
+          <GameOverModal resetGame={resetGameState} gameResult={gameResult} />
+        )}
+        <div className="flex justify-end">
+          <HelpModal />
+        </div>
+        <CardList onCardClick={setClickedCards} determineWin={determineWin} />
+      </div>
       <Footer />
     </div>
   );
