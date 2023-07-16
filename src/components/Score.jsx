@@ -1,12 +1,13 @@
 import PropTypes from "prop-types";
-
+import { Text } from "@chakra-ui/react";
 function Score({ children, twClasses }) {
   return (
-    <div
-      className={`rounded-lg bg-blue-100 p-2 text-xl shadow-md ${twClasses}`}
+    <Text
+      className={`rounded-lg  p-2 text-xl shadow-md ${twClasses}`}
+      color="green.600"
     >
       {children}
-    </div>
+    </Text>
   );
 }
 

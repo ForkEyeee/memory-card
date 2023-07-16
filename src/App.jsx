@@ -1,8 +1,13 @@
+import * as React from "react";
+import * as ReactDOM from "react-dom/client";
+import { useState, useRef } from "react";
+import { ChakraProvider } from "@chakra-ui/react";
 import CardList from "./components/CardList";
 import Header from "./components/Header";
 import GameOverModal from "./components/GameOverModal";
 import Footer from "./components/Footer";
-import { useState, useRef } from "react";
+
+const rootElement = document.getElementById("root");
 
 function App() {
   const [win, setWin] = useState(false);
@@ -38,5 +43,13 @@ function App() {
     </div>
   );
 }
+
+ReactDOM.createRoot(rootElement).render(
+  <React.StrictMode>
+    <ChakraProvider>
+      <App />
+    </ChakraProvider>
+  </React.StrictMode>
+);
 
 export default App;
