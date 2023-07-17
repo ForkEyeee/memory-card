@@ -30,7 +30,7 @@ export function HelpModal() {
         boxShadow="2xl"
         className="cursor-pointer"
         m={{ base: "1", sm: "4" }}
-        mr={{ base: "3", sm: "7" }} //for help icon on mobile
+        mr={{ base: "3", sm: "7" }}
         mt={{ base: "3", sm: "7" }}
       />
 

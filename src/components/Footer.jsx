@@ -9,7 +9,7 @@ function Footer() {
             rel="noreferrer"
             className="flex items-center gap-4 hover:underline"
           >
-            <span>ForkEyeee</span>
+            <span>GitHub</span>
             <img
               src="/assets/icons/github.png"
               alt="github-image"

@@ -6,6 +6,10 @@ import { HelpModal } from "./components/HelpModal";
 import GameOverModal from "./components/GameOverModal";
 import Footer from "./components/Footer";
 
+function shuffleCards(cardData) {
+  return [...cardData].sort(() => Math.random() - 0.5);
+}
+
 function App() {
   const [gameResult, setGameResult] = useState({
     win: undefined,
@@ -13,6 +17,7 @@ function App() {
   const [clickedCards, setClickedCards] = useState([]);
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
+  const [shuffledCards, setShuffledCards] = useState(shuffleCards(cardData));
 
   useEffect(() => {
     if (clickedCards.length === cardData.length) {
@@ -40,12 +45,14 @@ function App() {
       return;
     }
     setClickedCards(current => [...current, cardId]);
+    setShuffledCards(shuffleCards(cardData));
     setScore(score => score + 1);
   }
 
   function resetGameState() {
     setScore(0);
     setClickedCards([]);
+    setShuffledCards(shuffleCards(cardData));
     setGameResult(prevGameResult => ({
       ...prevGameResult,
       win: undefined,
@@ -62,7 +69,11 @@ function App() {
         <div className="flex justify-end">
           <HelpModal />
         </div>
-        <CardList onCardClick={setClickedCards} determineWin={determineWin} />
+        <CardList
+          onCardClick={setClickedCards}
+          determineWin={determineWin}
+          shuffledCards={shuffledCards}
+        />
       </div>
       <Footer />
     </div>

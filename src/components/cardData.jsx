@@ -39,6 +39,26 @@ const cardData = [
     name: "Loudly Crying Face",
     photoDir: "/assets/cards/loudly-crying-face.png",
   },
+  {
+    id: 9,
+    name: "Pile of Poo",
+    photoDir: "/assets/cards/pile-of-poo.png",
+  },
+  {
+    id: 10,
+    name: "Shushing Face",
+    photoDir: "/assets/cards/shushing-face.png",
+  },
+  {
+    id: 11,
+    name: "Hot Face",
+    photoDir: "/assets/cards/hot-face.png",
+  },
+  {
+    id: 12,
+    name: "Nauseated Face",
+    photoDir: "/assets/cards/nauseated-face.png",
+  },
 ];
 
 export default cardData;
