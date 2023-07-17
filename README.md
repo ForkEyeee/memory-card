@@ -57,3 +57,4 @@ This project is built using the following technologies:
 - [React](https://reactjs.org/)
 - [Vite](https://vitejs.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
+- [ChakraUI] (https://chakraui.com/)
